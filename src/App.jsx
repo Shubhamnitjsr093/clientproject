@@ -1,5 +1,5 @@
- 
 import { createBrowserRouter, Router, RouterProvider, } from 'react-router-dom'; 
+import { AuthProvider } from './context/AuthContext';
 import Layout from './components/layout/Layout';   
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
@@ -37,6 +37,15 @@ import SubscriptionTermsConditions from './pages/cms/SubscriptionTermsConditions
 import SupportMaintenancePolicy from './pages/cms/SupportMaintenancePolicy';
 import TermsConditions from './pages/cms/TermsConditions';
 import FaqPage from './pages/FaqPage';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import ContractorDashboard from './pages/dashboard/ContractorDashboard';
+import AdminDashboard from './pages/dashboard/AdminDashboard';
+import ClientDashboard from './pages/dashboard/ClientDashboard';
+
+
+
+
 
 function App() {
   
@@ -82,6 +91,13 @@ function App() {
         { path: '/support-maintenance-policy', element: <SupportMaintenancePolicy /> },   
 
         { path: '/faq', element: <FaqPage /> },   
+        { path: '/login', element: <Login /> },
+        { path: '/register', element: <Register /> },
+        { path: '/contractor/dashboard', element: <ContractorDashboard /> },
+        { path: '/admin/dashboard', element: <AdminDashboard /> },
+        { path: '/client/dashboard', element: <ClientDashboard /> },
+
+
       ]
     },
     {
@@ -92,11 +108,10 @@ function App() {
     
   ]);
 
-  return (
-    <>
-       <RouterProvider router={router} /> 
-    </>
+  return (    
+      <RouterProvider router={router} />
+  
   )
 }
 
-export default App
+export default App;

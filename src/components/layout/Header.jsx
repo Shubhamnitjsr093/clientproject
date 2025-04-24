@@ -64,7 +64,16 @@ const linksList = [
     name: "Contact Us",
     link: "/contact-us",
   },
-
+  {
+    name: "Login",
+    link: "/login",
+    isAuth: true
+  },
+  {
+    name: "Register",
+    link: "/register",
+    isAuth: true
+  }
 
 ]
 
@@ -197,6 +206,7 @@ const Header = () => {
           </div>
         </div>
       </aside>
+      
     </>
   );
 }
